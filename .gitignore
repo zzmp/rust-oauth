@@ -17,6 +17,7 @@
 /doc/
 /target/
 /build/
+/examples/hello
 /.rust/
 rusti.sh
 

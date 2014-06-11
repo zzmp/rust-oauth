@@ -1,4 +1,6 @@
-use std::io::net::ip::{SocketAddr, IpAddr};
+// Allow Ipv4Addr (only used in unit-tests)
+#[allow(unused_imports)]
+use std::io::net::ip::{SocketAddr, IpAddr, Ipv4Addr};
 use http::server::{Config, Server, Request, ResponseWriter};
 
 /// Your server will run under an instance of Gate
@@ -41,3 +43,16 @@ pub trait Listener: Server {
 }
 
 impl Listener for Gate {}
+
+#[test]
+fn configures() {
+  fn handler(_req: &Request, _res: &mut ResponseWriter) {}
+
+  let server = Gate{
+    ip: Ipv4Addr(127, 0, 0, 1),
+    port: 8001,
+    handler: handler
+  };
+
+  server.get_config();
+}
