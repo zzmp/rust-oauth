@@ -1,9 +1,16 @@
 use std::io::net::ip::{SocketAddr, IpAddr};
 use http::server::{Config, Server, Request, ResponseWriter};
 
+/// Your server will run under an instance of Gate
+///
+/// That instance will need access to the listen function,
+/// so be sure to grab the trait: use oauth::server::Listener
 pub struct Gate {
   pub ip: IpAddr,
   pub port: u16,
+  /// Define your server's (only) handler
+  ///
+  /// See rust-http for more verbose examples
   pub handler: fn(&Request, &mut ResponseWriter)
 }
 
@@ -26,6 +33,7 @@ impl Server for Gate {
 }
 
 pub trait Listener: Server {
+  /// Call gate.listen() to kick it off!
   fn listen(self) {
     debug!("Serving from the Gate! (oAuth is enabled)")
     self.serve_forever();
