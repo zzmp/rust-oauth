@@ -9,11 +9,15 @@ Basic oAuth in RUST
 
 * *Every iterative advance should be followed by a generalization to crates, so that code remains consumable.*
 
+- [X] Wrap request handler (proto-middleware style)
+
+ - Hello, world!
+
 - [ ] Create a redirecting server
 
 - [ ] Integrate [PostgreSQL](https://github.com/sfackler/rust-postgres)
 
- - Begin by storing basic information on server use/client origin
+ - Begin by storing basic information on server use and/or client origin
 
 - [ ] Point redirection to oAuth and store tokens
 
@@ -33,11 +37,11 @@ Basic oAuth in RUST
 
 ## Dependencies
 
-*See the **Getting started** section for instructions on linking to dependency libraries.*
+*See the* ***Getting started*** *section for instructions on linking to dependency libraries.*
 
-* [rust-oauth]
+* [rust-openssl](https://github.com/sfackler/rust-openssl)
 
-* [rust-http]
+* [rust-http](https://github.com/chris-morgan/rust-http)
 
 # Getting started
 
