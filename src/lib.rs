@@ -1,5 +1,10 @@
-#![crate_id = ""]
-#![deny(missing_doc)]
+#![crate_id = "oauth"]
 
-//! Documentation goes here.
+#![feature(phase)]
 
+#[phase(syntax, link)] extern crate log;
+
+extern crate http;
+extern crate url;
+
+pub mod server;
