@@ -13,7 +13,7 @@ Basic oAuth in RUST
 
  - Hello, world!
 
-- [ ] Create a redirecting server
+- [X] Create a redirecting server
 
 - [ ] Integrate [PostgreSQL](https://github.com/sfackler/rust-postgres)
 
